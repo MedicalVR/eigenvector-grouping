@@ -22,6 +22,7 @@ def train():
     checkpoint_path = os.path.join(config.output_dir, ct, "checkpoint")
 
     os.makedirs(logs_path, exist_ok=True)
+    os.makedirs(os.path.join(logs_path, "lightning_logs"), exist_ok=True)
     os.makedirs(checkpoint_path, exist_ok=True)
     print("\nLogging to:", logs_path)
 
