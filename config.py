@@ -35,7 +35,7 @@ class TrainSegmentatorConfig:
     split: str = None
 
     # Dataloader
-    batch_size: int = 4
+    batch_size: int = 2
     num_workers: int = 10
 
     # Model
