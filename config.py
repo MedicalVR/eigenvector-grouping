@@ -28,10 +28,12 @@ class TrainSegmentatorConfig:
 
     # Paths
     # input_dir: str = os.path.join(".data", "input") # artery_vein, Laurens, normtot is used
-    input_dir: str = os.path.join(".data", "input(artery_only)") # artery_only, normtot
+    # input_dir: str = os.path.join(".data", "input(artery_only)") # artery_only, normtot
+    input_dir: str = "D:\eigenvector-grouping\.data\input(artery_only)" 
     # input_dir: str = os.path.join(".data", "input(vein_only)") # veins_only, normtot
     # input_dir: str = os.path.join(".data", "input(artery_vein)") # artery_vein, normtot
     output_dir: str = os.path.join(".data", "output")
+    
 
     # Data
     size: int = 20_000
@@ -46,10 +48,10 @@ class TrainSegmentatorConfig:
     model_type: str = "radius"
     ncomponents: int = 0
     features: int = 0
-    classes: int = 2 # 3 # do I need to change this if I'm changing input data? I did 
+    classes: int = 3 # 3 # do I need to change this if I'm changing input data? I did 
 
     # Trainer
-    epochs: int = 200
+    epochs: int = 50 # 200
 
     # Optimizer
     optimizer: object = OptimizerConfig(
