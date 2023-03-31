@@ -1,3 +1,6 @@
+# remove self.save_hyperparameter() from lightning_model.py
+# add absolute path in config.py
+
 import os
 import datetime
 
@@ -168,6 +171,7 @@ def train_tune(search_space, num_epochs=200, num_gpus=0):
     )
     trainer.fit(model)
 
+    # session.report({"acc": accuracy, "metric_foo": random_metric_1, "bar": metric_2})
     print("------------------ Model trained ------------------")
 
 def train_ASHA(num_samples = 10, num_epochs = 200, gpus_per_trial = 0):

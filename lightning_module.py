@@ -43,6 +43,9 @@ class SegmentatorModule(pl.LightningModule):
         self.loss_fn = nn.CrossEntropyLoss()
         self.confmat = ConfusionMatrix(task="multiclass", num_classes=2)
 
+        # save hyper-parameters to self.hparamsm auto-logged by wandb
+        self.save_hyperparameters()
+
     def prepare_data(self):
         
         # Extract filenames and combain into list of dicts
