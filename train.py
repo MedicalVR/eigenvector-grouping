@@ -9,11 +9,12 @@ from pytorch_lightning.loggers import TensorBoardLogger
 from lightning_module import SegmentatorModule
 from config import TrainSegmentatorConfig
 
+
 def train():
     """Train surface model"""
     
     # Load config
-    config = TrainSegmentatorConfig()
+    config = TrainSegmentatorConfig() # change hyperparameters here 
     np.random.seed(config.seed)
 
     # Init out directories

@@ -30,7 +30,7 @@ class SegmentatorModule(pl.LightningModule):
         super().__init__()
 
         set_determinism(seed=config.seed)
-        self.save_hyperparameters()
+        #self.save_hyperparameters()
 
         self.size = config.size
         self.input_dir = config.input_dir
@@ -41,7 +41,10 @@ class SegmentatorModule(pl.LightningModule):
 
         self.model = config.model(config)
         self.loss_fn = nn.CrossEntropyLoss()
-        self.confmat = ConfusionMatrix(num_classes=2)
+        self.confmat = ConfusionMatrix(task="multiclass", num_classes=2)
+
+        # save hyper-parameters to self.hparamsm auto-logged by wandb
+        self.save_hyperparameters()
 
     def prepare_data(self):
         
